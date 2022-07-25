@@ -15,7 +15,6 @@ public class DetailsPage extends AbstractPage {
         super(driver);
     }
 
-
     public DatePage clickDateRadioBtn(){
         dateRadioBtn.click();
         return new DatePage(getDriver());

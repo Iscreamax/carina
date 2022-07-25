@@ -6,9 +6,6 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public class TimePage extends AbstractPage {
-    public TimePage(WebDriver driver) {
-        super(driver);
-    }
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTable[`name == \"ReminderDetail.ID.DetailsTable\"`]")
     private ExtendedWebElement homeBtn;
 
@@ -29,8 +26,11 @@ public class TimePage extends AbstractPage {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTable[`name == \"ReminderDetail.ID.DetailsTable\"`]/XCUIElementTypeCell[6]/XCUIElementTypeOther[1]/XCUIElementTypeOther")
     private ExtendedWebElement priorityBtn;
 
+    public TimePage(WebDriver driver) {
+        super(driver);
+    }
 
-    public void typeTimeField(){
+    public void typeTimeField() {
         timeField.click();
         numberOneBtn.doubleClick();
         numberTwoBtn.click();
@@ -38,7 +38,7 @@ public class TimePage extends AbstractPage {
         homeBtn.click();
     }
 
-    public PriorityPage clickPriorityBtn(){
+    public PriorityPage clickPriorityBtn() {
         priorityBtn.click();
         return new PriorityPage(getDriver());
     }

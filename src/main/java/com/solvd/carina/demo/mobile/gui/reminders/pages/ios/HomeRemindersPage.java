@@ -6,9 +6,6 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public class HomeRemindersPage extends AbstractPage {
-    public HomeRemindersPage(WebDriver driver) {
-        super(driver);
-    }
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTextField[`name == \"Quick Entry Title Field\"`]")
     private ExtendedWebElement titleField;
 
@@ -20,20 +17,25 @@ public class HomeRemindersPage extends AbstractPage {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeCell[`label == \"Test, 1 reminder\"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther")
     private ExtendedWebElement reminderBtn;
-    public void typeTitleText(String text){
+
+    public HomeRemindersPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void typeTitleText(String text) {
         titleField.type(text);
     }
 
-    public void typeNotesText(String text){
+    public void typeNotesText(String text) {
         notesField.type(text);
     }
 
-    public DetailsPage clickDetailsBtn(){
+    public DetailsPage clickDetailsBtn() {
         detailsBtn.click();
         return new DetailsPage(getDriver());
     }
 
-    public ListPage clickRemindersBtn(){
+    public ListPage clickRemindersBtn() {
         reminderBtn.click();
         return new ListPage(getDriver());
     }

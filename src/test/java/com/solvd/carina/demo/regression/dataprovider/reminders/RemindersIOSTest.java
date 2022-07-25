@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class RemindersTest extends AbstractTest implements IMobileUtils {
+public class RemindersIOSTest extends AbstractTest implements IMobileUtils {
     @Test
     @MethodOwner(owner = "Max")
     public void testReminders() {

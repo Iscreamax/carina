@@ -6,15 +6,15 @@ import com.solvd.carina.demo.mobile.gui.reminders.pages.common.ScrollDownPageBas
 import org.openqa.selenium.WebDriver;
 
 public class ScrollDownPage extends ScrollDownPageBase {
-    public ScrollDownPage(WebDriver driver) {
-        super(driver);
-    }
-
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTextField[`name == \"SpotlightSearchField\"`]")
     private ExtendedWebElement searchField;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"go\"`]")
     private ExtendedWebElement goBtn;
+
+    public ScrollDownPage(WebDriver driver) {
+        super(driver);
+    }
 
     @Override
     public void typeText(String text) {
@@ -28,7 +28,7 @@ public class ScrollDownPage extends ScrollDownPageBase {
 
 
     @Override
-    public RemindersPage clickGoBtn(){
+    public RemindersPage clickGoBtn() {
         goBtn.click();
         return new RemindersPage(getDriver());
     }

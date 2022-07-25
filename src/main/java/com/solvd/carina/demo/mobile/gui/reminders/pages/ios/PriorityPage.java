@@ -11,14 +11,16 @@ public class PriorityPage extends AbstractPage {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Details\"`]")
     private ExtendedWebElement backDetailsBtn;
+
     public PriorityPage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickMediumBtn(){
+    public void clickMediumBtn() {
         mediumBtn.click();
     }
-    public DetailsPage clickBackDetailsBtn(){
+
+    public DetailsPage clickBackDetailsBtn() {
         backDetailsBtn.click();
         return new DetailsPage(getDriver());
     }

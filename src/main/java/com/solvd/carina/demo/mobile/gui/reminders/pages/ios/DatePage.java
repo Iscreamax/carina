@@ -6,21 +6,21 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public class DatePage extends AbstractPage {
-    public DatePage(WebDriver driver) {
-        super(driver);
-    }
-
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == \"30\"`]")
     private ExtendedWebElement planDateBtn;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeSwitch[`label == \"Time\"`]")
     private ExtendedWebElement timeRadioBtn;
 
-    public void clickPlanDateBtn(){
+    public DatePage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void clickPlanDateBtn() {
         planDateBtn.click();
     }
 
-    public TimePage clickTimeRadioBtn(){
+    public TimePage clickTimeRadioBtn() {
         timeRadioBtn.click();
         return new TimePage(getDriver());
     }
